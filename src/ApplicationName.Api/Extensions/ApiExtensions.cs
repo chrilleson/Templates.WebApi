@@ -1,4 +1,7 @@
 ﻿using ApplicationName.Common.Json;
+#if HealthCheck
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+#endif
 
 namespace ApplicationName.Api.Extensions;
 
@@ -7,13 +10,9 @@ public static class ApiExtensions
     public static void AddApi(this IServiceCollection services)
     {
         services.AddVersioning();
-        #if HealthCheck
-            services.AddHealthChecks();
-            endpoints.MapHealthChecks("HEALTHCHECK-PATH", new HealthCheckOptions
-            {
-              ResponseWriter = ApplicationBuilderWriteResponseExtension.WriteResponse
-            });
-        #endif
+#if HealthCheck
+        services.AddHealthChecks();
+#endif
         services.AddHttpClient();
         services.AddHttpContextAccessor();
         services.AddHsts();

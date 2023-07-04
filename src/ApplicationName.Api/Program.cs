@@ -2,6 +2,9 @@ using ApplicationName.Api.Extensions;
 using ApplicationName.Application;
 using ApplicationName.Infrastructure.Persistence;
 using ApplicationName.Repositories;
+#if HealthCheck
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+#endif
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,5 +32,9 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI();
+
+#if HealthCheck
+app.UseHealthChecks("HEALTHCHECK-PATH");
+#endif
 
 app.Run();
