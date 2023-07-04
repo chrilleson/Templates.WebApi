@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Templates.WebApi</id>
+    <version>1.0.0</version>
+    <description>This nuget is an template that provides a solution för web api's.</description>
+    <authors>Christoffer Ljungqvist</authors>
+    <title>WebApi Dotnet Templates</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <tags>.NET WebApi Templates</tags>
+    <projectUrl>https://github.com/chrilleson/Templates.WebApi</projectUrl>
+    <repository type="git" url="https://github.com/chrilleson/Templates.WebApi.git" branch="master"  />
+    <language>en-US</language>
+	<packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="**" exclude="**\bin\**\*;**\obj\**\*;**\*.user;**\*.lock.json;_rels\**\*;package\**\*" />
+  </files>
+</package>
