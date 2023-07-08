@@ -12,8 +12,9 @@
     <projectUrl>https://github.com/chrilleson/Templates.WebApi</projectUrl>
     <repository type="git" url="https://github.com/chrilleson/Templates.WebApi.git" branch="master"  />
     <language>en-US</language>
-	<packageTypes>
-      <packageType name="Template" />
+    <readme>https://github.com/chrilleson/Templates.WebApi/blob/master/README.md</readme>
+    <packageTypes>
+        <packageType name="Template" />
     </packageTypes>
   </metadata>
   <files>
