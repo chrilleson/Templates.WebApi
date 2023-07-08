@@ -2,9 +2,6 @@ using ApplicationName.Api.Extensions;
 using ApplicationName.Application;
 using ApplicationName.Infrastructure.Persistence;
 using ApplicationName.Repositories;
-#if HealthCheck
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-#endif
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

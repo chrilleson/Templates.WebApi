@@ -1,7 +1,4 @@
 ﻿using ApplicationName.Common.Json;
-#if HealthCheck
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-#endif
 
 namespace ApplicationName.Api.Extensions;
 
