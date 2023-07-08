@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Templates.WebApi</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <description>This nuget is an template that provides a solution för web api's.</description>
     <authors>Christoffer Ljungqvist</authors>
     <title>WebApi Dotnet Templates</title>
@@ -12,7 +12,7 @@
     <projectUrl>https://github.com/chrilleson/Templates.WebApi</projectUrl>
     <repository type="git" url="https://github.com/chrilleson/Templates.WebApi.git" branch="master"  />
     <language>en-US</language>
-    <readme>https://github.com/chrilleson/Templates.WebApi/blob/master/README.md</readme>
+    <readme>https://github.com/chrilleson/Templates.WebApi/blob/master/READM</readme>
     <packageTypes>
         <packageType name="Template" />
     </packageTypes>
