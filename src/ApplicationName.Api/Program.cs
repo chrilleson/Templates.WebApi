@@ -1,4 +1,5 @@
 using ApplicationName.Api.Extensions;
+using ApplicationName.Api.Middlewares;
 using ApplicationName.Application;
 using ApplicationName.Infrastructure.Persistence;
 using ApplicationName.Repositories;
@@ -22,6 +23,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("Docker"))
     app.UseDeveloperExceptionPage();
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseSerilogRequestLogging();
 app.UseRouting();
