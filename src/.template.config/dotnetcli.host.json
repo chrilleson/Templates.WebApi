@@ -3,24 +3,12 @@
     "symbolInfo":
     {
         "Docker": {
-            "longName": "dockerfile",
+            "longName": "docker",
             "shortName": "d"
         },
         "ReadMe": {
             "longName": "readme",
             "shortName": "r"
-        },
-        "Tests": {
-            "longName": "tests",
-            "shortName": "t"
-        },
-        "GitHub": {
-            "longName": "github",
-            "shortName": "gh"
-        },        
-        "Authorization": {
-            "longName": "authorization",
-            "shortName": "auth"
         },
         "HealthCheck": {
             "longName": "healthcheck",
@@ -29,30 +17,6 @@
         "HealthCheckPath": {
             "longName": "healthcheck-path",
             "shortName": "hp"
-        },
-        "Swagger": {
-            "longName": "swagger",
-            "shortName": "s"
-        },
-        "SwaggerPath": {
-            "longName": "swagger-path",
-            "shortName": "sp"
-        },
-        "Contact": {
-            "longName": "contact-mail",
-            "shortName": "cm"
-        },
-        "CompanyName": {
-            "longName": "company-name",
-            "shortName": "cn"
-        },
-        "CompanyWebsite": {
-            "longName": "company-website",
-            "shortName": "cw"
-        },
-        "ApiDescription": {
-            "longName": "api-description",
-            "shortName": "desc"
         }
     }
 }

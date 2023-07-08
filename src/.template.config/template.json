@@ -38,28 +38,6 @@
                     [
                         "README.md"
                     ]
-                },
-                {
-                    "condition": "(!GitHub)",
-                    "exclude": 
-                    [
-                        ".github/**/*"
-                    ]
-                },
-                {
-                    "condition": "(!Swagger)",
-                    "exclude": 
-                    [
-                      "src/ApplicationName.Api/Extensions/SwaggerExtensions.cs"
-                    ]
-                },
-                {
-                    "condition": "(!HealthCheck)",
-                    "exclude": 
-                    [
-                      "src/ApplicationName.Api/Extensions/HealthChecksExtensions.cs",
-                      "src/ApplicationName.Api/Extensions/ApiExtensions.cs"
-                    ]
                 }
             ]
         }
@@ -77,24 +55,6 @@
             "defaultValue": "true",
             "description": "Add a README.md markdown file describing the project."
         },
-        "Tests": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "true",
-            "description": "Adds an integration project and unit test projects."
-        },
-        "GitHub": {
-            "type": "parameter",
-            "datatype": "bool",
-            "description": "Adds a GitHub action continuous integration pipeline.",
-            "defaultValue": "false"
-        },
-        "Authorization": {
-          "type": "parameter",
-          "datatype": "bool",
-          "defaultValue": "true",
-          "description": "Enables the use of authorization with Microsoft.Identity.Web."
-        },      
         "HealthCheck": {
           "type": "parameter",
           "datatype": "bool",
@@ -107,47 +67,6 @@
           "defaultValue": "/health",
           "replaces": "HEALTHCHECK-PATH",
           "description": "HealthCheck path. Only necessary if HealthCheck is enabled."
-        },
-        "Swagger": {
-          "type": "parameter",
-          "datatype": "bool",
-          "defaultValue": "true",
-          "description": "Enable the use of Swagger."
-        },
-        "SwaggerPath": {
-          "type": "parameter",
-          "datatype": "string",
-          "defaultValue": "/swagger",
-          "replaces": "SWAGGER-PATH",
-          "description": "Swagger UI Path. Do not add a backslash. Only necessary if Swagger is enabled."
-        },
-        "Contact": {
-          "type": "parameter",
-          "datatype": "string",
-          "defaultValue": "user@example.com",
-          "replaces": "API-CONTACT",
-          "description": "The contact details to use if someone wants to contact you. Only necessary if Swagger is enabled."
-        },
-        "CompanyName": {
-          "type": "parameter",
-          "datatype": "string",
-          "defaultValue": "",
-          "replaces": "COMPANY-NAME",
-          "description": "The name of the company. Only necessary if Swagger is enabled."
-        },
-        "CompanyWebsite": {
-          "type": "parameter",
-          "datatype": "string",
-          "defaultValue": "",
-          "replaces": "COMPANY-WEBSITE",
-          "description": "The website of the company. Needs to be a valid Uri. Only necessary if Swagger is enabled."
-        },
-        "ApiDescription": {
-          "type": "parameter",
-          "datatype": "string",
-          "defaultValue": "Put your api info here",
-          "replaces": "API-DESCRIPTION",
-          "description": "The description of the WebAPI. Only necessary if Swagger is enabled."
         }
     }
 }
