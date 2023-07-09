@@ -27,6 +27,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseSerilogRequestLogging();
 app.UseRouting();
+app.UseCors(builder.Configuration.GetValue<string>("AllowedOrigin"));
 app.UseAuthorization();
 app.MapControllers();
 app.UseSwagger();
