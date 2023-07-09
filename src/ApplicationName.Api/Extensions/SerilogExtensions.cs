@@ -9,5 +9,6 @@ public static class SerilogExtensions
             .ReadFrom.Configuration(hostingContext.Configuration)
             .Enrich.FromLogContext()
             .Enrich.WithClientIp()
+            .WriteTo.Console()
         );
 }
