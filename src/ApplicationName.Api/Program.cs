@@ -29,12 +29,14 @@ app.UseSerilogRequestLogging();
 app.UseRouting();
 app.UseCors(builder.Configuration.GetValue<string>("AllowedOrigin"));
 app.UseAuthorization();
-app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI();
 
 #if HealthCheck
 app.UseHealthChecks("HEALTHCHECK-PATH");
 #endif
+
+app.MapControllers();
+app.MapGet("/", () => "ApplicationName.Api is alive and kicking!");
 
 app.Run();
