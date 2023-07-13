@@ -407,3 +407,4 @@ FodyWeavers.xsd
 /dataSources.local.xml
 
 *.vscode
+/src/data/*
