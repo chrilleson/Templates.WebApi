@@ -18,10 +18,18 @@ builder.Services.AddApi();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+#if (Docker)
 if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("Docker"))
 {
     app.UseDeveloperExceptionPage();
 }
+#endif
+#if (!Docker)
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+#endif
 
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
