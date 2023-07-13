@@ -67,6 +67,12 @@
           "defaultValue": "/health",
           "replaces": "HEALTHCHECK-PATH",
           "description": "HealthCheck path. Only necessary if HealthCheck is enabled."
+        },
+        "efsql":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Enables use of EF Core with SQL database."
         }
     }
 }

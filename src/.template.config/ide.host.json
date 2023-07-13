@@ -20,30 +20,6 @@
       "isVisible": true      
     },
     {
-      "id": "Tests",
-      "name": 
-      {
-        "text": "Adds a Unit Test project and a Integration Test project."
-      },
-      "isVisible": true
-    },
-    {       
-      "id": "GitHub",
-      "name": 
-      {
-        "text": "Adds a GitHub action to deploy the application."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "Authorization",
-      "name": 
-      {
-        "text": "Enable the use of authorization with Microsoft.Identity.Web."
-      },
-      "isVisible": true      
-    },
-    {       
       "id": "HealthCheck",
       "name": 
       {
@@ -60,50 +36,10 @@
       "isVisible": true      
     },
     {       
-      "id": "Swagger",
+      "id": "efsql",
       "name": 
       {
-        "text": "Enable the use of Swagger."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "SwaggerPath",
-      "name": 
-      {
-        "text": "Swagger UI Path. Only necessary if Swagger is enabled."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "Contact",
-      "name": 
-      {
-        "text": "The contact details to use if someone wants to contact you. Only necessary if Swagger is enabled."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "CompanyName",
-      "name": 
-      {
-        "text": "The name of the company. Only necessary if Swagger is enabled."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "CompanyWebsite",
-      "name": 
-      {
-        "text": "The website of the company. Needs to be a valid Uri. Only necessary if Swagger is enabled."
-      },
-      "isVisible": true      
-    },
-    {       
-      "id": "ApiDescription",
-      "name": 
-      {
-        "text": "The description of the WebAPI. Only necessary if Swagger is enabled."
+        "text": "Enables use of EF Core with SQL database."
       },
       "isVisible": true      
     }
