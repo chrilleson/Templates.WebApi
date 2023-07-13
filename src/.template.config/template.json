@@ -38,6 +38,12 @@
                     [
                         "ApplicationName-Api/README.md"
                     ]
+                },
+                {
+                    "condition": "(!efsql)",
+                    "exclude": [
+                        "ApplicationName.Infrastructure/Persistence/AppDbContext.cs"
+                    ]
                 }
             ]
         }

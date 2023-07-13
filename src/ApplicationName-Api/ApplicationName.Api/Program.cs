@@ -10,7 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 // Add services to the container.
+#if (efsql)
+builder.Services.AddPersistence("CONNECTION-STRING");
+#endif
+#if (!efsql)
 builder.Services.AddPersistence();
+#endif
 builder.Services.AddRepositories();
 builder.Services.AddApplication();
 builder.Services.AddApi();
