@@ -19,7 +19,7 @@
     "sourceName": "ApplicationName",
     "preferNameDirectory": true,
     "primaryOutputs": [
-        { "path": "ApplicationName.sln" }
+        { "path": "ApplicationName-Api/ApplicationName.sln" }
     ],
     "sources": [
         {
@@ -28,15 +28,15 @@
                     "condition": "(!Docker)",
                     "exclude":
                     [
-                        "Dockerfile",
-                        ".dockerignore"
+                        "ApplicationName-Api/Dockerfile",
+                        "ApplicationName-Api/.dockerignore"
                     ]
                 },
                 {
                     "condition": "(!ReadMe)",
                     "exclude": 
                     [
-                        "README.md"
+                        "ApplicationName-Api/README.md"
                     ]
                 }
             ]
