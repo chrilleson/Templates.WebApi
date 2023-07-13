@@ -395,6 +395,7 @@ FodyWeavers.xsd
 /shelf/
 /workspace.xml
 # Rider ignored files
+**/.idea
 /projectSettingsUpdater.xml
 /.idea.ApplicationName.iml
 /contentModel.xml
@@ -404,3 +405,5 @@ FodyWeavers.xsd
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+*.vscode
