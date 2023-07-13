@@ -17,6 +17,9 @@
         "HealthCheckPath": {
             "longName": "healthcheck-path",
             "shortName": "hp"
+        },
+        "efsql": {
+            "longName": "efsql"
         }
     }
 }
