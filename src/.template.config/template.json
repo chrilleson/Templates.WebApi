@@ -29,7 +29,9 @@
                     "exclude":
                     [
                         "ApplicationName-Api/Dockerfile",
-                        "ApplicationName-Api/.dockerignore"
+                        "ApplicationName-Api/.dockerignore",
+                        "docker-compose/docker-compose.yaml",
+                        "docker-compose/docker-compose-sql.yaml"
                     ]
                 },
                 {
@@ -42,10 +44,23 @@
                 {
                     "condition": "(!efsql)",
                     "exclude": [
-                        "ApplicationName.Infrastructure/Persistence/AppDbContext.cs"
+                        "ApplicationName-Api/ApplicationName.Infrastructure/Persistence/AppDbContext.cs",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                        "docker-compose/docker-compose-sql.yaml",
+                        "data/**"
+                    ]
+                },
+                {
+                    "condition": "(efsql)",
+                    "exclude": [
+                        "docker-compose/docker-compose.yaml"
                     ]
                 }
-            ]
+            ],
+            "rename": {
+                "docker-compose/docker-compose.yaml": "docker-compose.yaml",
+                "docker-compose/docker-compose-sql.yaml": "docker-compose.yaml"
+            }
         }
     ],
     "symbols": {
