@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
+      <PackageReference Condition="'$(dappersql)' == 'true'" Include="Dapper" Version="2.0.143" />
+      <PackageReference Condition="'$(dappersql)' == 'true'" Include="Microsoft.Data.SqlClient" Version="5.1.1" />
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8" />
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
