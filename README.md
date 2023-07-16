@@ -12,7 +12,8 @@ Each parameter has a default value, so you can ran with the defaults if you like
 |-----------------------|----------------------------------------------------------------------------------|---------------------------|-------------------------|
 | **Docker**            | Adds an optimised Dockerfile to add the ability to build a Docker image.         | `-docker`, `-d`           | _true_                  |
 | **ReadMe**            | Adds a README markdown file describing the project.                              | `-readme`, `-r`           | _true_                  |
-| **HealthCheck**       | Enables or disables the use of healthchecks.                                     | `-healthcheck`, `-health` | true                    |
+| **HealthCheck**       | Enables or disables the use of healthchecks.                                     | `-healthcheck`, `-health` | _true_                  |
 | **HealthCheckPath**   | HealthCheck path. Only necessary if HealthCheck is enabled.                      | `-healthcheck-path`, `-hp`| /health                 |
+| **EFSQL**             | Enables or disables the use of a SQL database wtih EF-Core.                      | `--efsql`                 | _false_                 |
 
 ---
