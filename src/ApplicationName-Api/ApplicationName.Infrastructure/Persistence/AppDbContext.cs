@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿#if (efsql)
+using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationName.Infrastructure.Persistence;
 
@@ -11,3 +12,4 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 }
+#endif
