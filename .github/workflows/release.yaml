@@ -11,11 +11,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Setup Nuget.exe
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: 'latest'
+    - name: Nuget pack
+      run: nuget pack .\Templates.WebApi.nuspec -OutputDirectory .\.nuget -Version ${{ github.event.release.tag_name }}
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
-    - name: Build
-      run: dotnet build -c Release
-    - name: Pack nugets
-      run: dotnet pack -c Release --no-build --output .
     - name: Push to NuGet
       run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
+      
+      
