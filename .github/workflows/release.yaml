@@ -3,21 +3,24 @@ name: Publish to NuGet
 on:
   release:
     types: [published]
-    
+
+env:
+  NuGetDirectory: ${{github.workspace}}\.nuget
+  Version: ${{ github.event.release.tag_name }}
+
 jobs:
-  build:
+  publish_nuget:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup NuGet.exe for use with actions
       uses: NuGet/setup-nuget@v1.2.0
-    - name: Nuget pack
-      run: nuget pack Templates.WebApi.nuspec -OutputDirectory ${{github.workspace}}\.nuget -Version ${{ github.event.release.tag_name }}
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v3.2.0
+    - name: Nuget pack
+      run: nuget pack Templates.WebApi.nuspec -OutputDirectory ${{ env.NuGetDirectory }} -Version ${{ env.Version }}
     - name: Push to NuGet
-      run: dotnet nuget push "${{ github.workspace }}/.nuget/Templates.Api.${{ github.event.release.tag_name }}.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ${{ env.NuGetDirectory }}/Templates.Api.${{ env.Version }}.nupkg --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
       
       
