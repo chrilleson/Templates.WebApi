@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Templates.WebApi</id>
-    <version>1.0.2</version>
+    <version>1.0.0</version>
     <description>This nuget is an template that provides a solution for web api's.</description>
     <authors>Christoffer Ljungqvist</authors>
     <title>WebApi Dotnet Templates</title>

@@ -42,6 +42,14 @@
         "text": "Enables use of EF Core with SQL database."
       },
       "isVisible": true      
+    },
+    {       
+      "id": "dappersql",
+      "name": 
+      {
+        "text": "Enables use of Dapper with SQL database."
+      },
+      "isVisible": true      
     }
   ]
 }

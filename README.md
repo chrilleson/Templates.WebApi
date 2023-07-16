@@ -17,5 +17,5 @@ Each parameter has a default value, so you can ran with the defaults if you like
 | **HealthCheck**       | Enables or disables the use of healthchecks.                                     | `-healthcheck`, `-health` | _true_                  |
 | **HealthCheckPath**   | HealthCheck path. Only necessary if HealthCheck is enabled.                      | `-healthcheck-path`, `-hp`| /health                 |
 | **EFSQL**             | Enables or disables the use of a SQL database wtih EF-Core.                      | `--efsql`                 | _false_                 |
-
+| **DapperSQL**         | Enables or disables the use of a SQL database with Dapper                        | `--dappersql`, `-d-sql`   | _false_                 |
 ---
