@@ -5,7 +5,7 @@ on:
     types: [published]
 
 env:
-  NuGetDirectory: ${{github.workspace}}\.nuget
+  NuGetDirectory: '${{github.workspace}}/.nuget'
   Version: ${{ github.event.release.tag_name }}
 
 jobs:
