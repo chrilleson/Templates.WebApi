@@ -11,15 +11,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Setup Nuget.exe
-      uses: nuget/setup-nuget@v1
-      with:
-        nuget-version: 'latest'
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.2.0
     - name: Nuget pack
-      run: nuget pack .\Templates.WebApi.nuspec -OutputDirectory .\.nuget -Version ${{ github.event.release.tag_name }}
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v1
+      run: nuget pack ${{ github.workspace }}\Templates.WebApi.nuspec -OutputDirectory .\.nuget -Version ${{ github.event.release.tag_name }}
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v3.2.0
     - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "${{ github.workspace }}/.nuget/Templates.Api.${{ github.event.release.tag_name }}.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
       
       
