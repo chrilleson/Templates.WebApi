@@ -10,10 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 // Add services to the container.
-#if (efsql)
-builder.Services.AddPersistence("CONNECTION-STRING");
-#endif
-#if (!efsql)
+#if (efsql || dappersql)
+builder.Services.AddPersistence(builder.Configuration.GetValue<string>("ConnectionStrings:YourDbConnection"));
+#else
 builder.Services.AddPersistence();
 #endif
 builder.Services.AddRepositories();
@@ -28,8 +27,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("Docker"))
 {
     app.UseDeveloperExceptionPage();
 }
-#endif
-#if (!Docker)
+#else
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();

@@ -1,8 +1,14 @@
 ﻿#if efsql
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-#endif
+using Microsoft.EntityFrameworkCore.Diagnostics
+using Microsoft.Extensions.DependencyInjection;;
+#elif dappersql
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using System.Data;
+#else
+using Microsoft.Extensions.DependencyInjection;
+#endif
 
 namespace ApplicationName.Infrastructure.Persistence;
 
@@ -19,8 +25,12 @@ public static class PersistenceExtensions
             .UseSqlServer(connectionString)
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
             .ConfigureWarnings(x => x.Throw(RelationalEventId.MultipleCollectionIncludeWarning));
-#endif
-#if (!efsql)
+#elif (dappersql)
+    public static void AddPersistence(this IServiceCollection services, string connectionString)
+    {
+        services.AddTransient<IDbConnection>(_ => new SqlConnection(connectionString));
+    }
+#else
     public static void AddPersistence(this IServiceCollection services)
     {
     }

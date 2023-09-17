@@ -20,6 +20,10 @@
         },
         "efsql": {
             "longName": "efsql"
+        },
+        "dappersql": {
+            "longName": "dappersql",
+            "shortName": "d-sql"
         }
     }
 }

@@ -44,16 +44,21 @@
                 {
                     "condition": "(!efsql)",
                     "exclude": [
-                        "ApplicationName-Api/ApplicationName.Infrastructure/Persistence/AppDbContext.cs",
-                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
-                        "docker-compose/docker-compose-sql.yaml",
-                        "data/**"
+                        "ApplicationName-Api/ApplicationName.Infrastructure/Persistence/AppDbContext.cs"                                 
                     ]
                 },
                 {
-                    "condition": "(efsql)",
+                    "condition": "(efsql || dappersql)",
                     "exclude": [
                         "docker-compose/docker-compose.yaml"
+                    ]
+                },
+                {
+                    "condition": "(!efsql && !dappersql)",
+                    "exclude": [
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                        "docker-compose/docker-compose-sql.yaml",
+                        "data/**"
                     ]
                 }
             ],
@@ -94,6 +99,12 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Enables use of EF Core with SQL database."
+        },
+        "dappersql":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Enables use of Dapper with SQL database."
         }
     }
 }
