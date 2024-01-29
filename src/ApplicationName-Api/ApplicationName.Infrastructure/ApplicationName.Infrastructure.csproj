@@ -7,8 +7,8 @@
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8" />
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
       <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
