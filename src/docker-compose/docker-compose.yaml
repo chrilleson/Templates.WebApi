@@ -2,7 +2,9 @@ version: '3.9'
 name: applicationname
 services:
   api:
-    build: ./ApplicationName-Api/
+    build:
+      context: ../ApplicationName-Api/
+      dockerfile: ../ApplicationName-Api/Dockerfile
     ports:
       - "5001:443"
     environment:
@@ -11,4 +13,4 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=Qwerty1234!
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     volumes:
-      - ./Certificates:/https/:ro
+      - ../Certificates:/https/:ro
