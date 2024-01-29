@@ -1,22 +1,35 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /source
-
-# Copy csproj and restore
-COPY *.sln .
-COPY */*.csproj ./
-COPY Directory.Build.props ./
-
-RUN for file in $(ls *.csproj); do mkdir -p ${file%.*} && mv $file ${file%.*}; done
-RUN dotnet restore
-
-# Copy before publish
-COPY . ./
-RUN dotnet publish ApplicationName.Api -o /app
-
-# Switch from sdk container to runtime and copy files
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-COPY --from=build /app ./
+EXPOSE 443
 
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["./ApplicationName.Api/ApplicationName.Api.csproj", "./"]
+COPY ["./ApplicationName.Application/ApplicationName.Application.csproj", "./"]
+COPY ["./ApplicationName.Common/ApplicationName.Common.csproj", "./"]
+COPY ["./ApplicationName.Domain/ApplicationName.Domain.csproj", "./"]
+COPY ["./ApplicationName.Infrastructure/ApplicationName.Infrastructure.csproj", "./"]
+COPY ["./ApplicationName.Repositories/ApplicationName.Repositories.csproj", "./"]
+COPY Directory.Build.props ./
+RUN dotnet restore "ApplicationName.Api.csproj"
+COPY . .
+WORKDIR "/src/ApplicationName.Api"
+RUN dotnet build "ApplicationName.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "ApplicationName.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+
+ENV ASPNETCORE_URLS="https://+:443"
+ENV ASPNETCORE_HTTPS_PORT=5001
+ENV ASPNETCORE_ENVIRONMENT=Docker
+ENV ASPNETCORE_Kestrel__Certificates__Default__Password="Qwerty1234!"
+ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
 
 ENTRYPOINT [ "dotnet", "ApplicationName.Api.dll" ]
