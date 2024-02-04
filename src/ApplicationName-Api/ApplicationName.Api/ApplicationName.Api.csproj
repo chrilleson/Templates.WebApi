@@ -19,6 +19,7 @@
     <ProjectReference Include="..\ApplicationName.Common\ApplicationName.Common.csproj" />
     <ProjectReference Include="..\ApplicationName.Infrastructure\ApplicationName.Infrastructure.csproj" />
     <ProjectReference Include="..\ApplicationName.Repositories\ApplicationName.Repositories.csproj" />
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <PropertyGroup>
@@ -28,12 +29,13 @@
     <PackageTags>.NET; WebApi; Templates;</PackageTags>
     <Title>WebApi .Net Templates</Title>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
-    <Licence>MIT</Licence>
-    <ProjectUrl>https://github.com/chrilleson/Templates.WebApi</ProjectUrl>
+    <PackageLicenceExpression>MIT</PackageLicenceExpression>
+    <PackageProjectUrl>https://github.com/chrilleson/Templates.WebApi</PackageProjectUrl>
     <RepositoryUrl>"https://github.com/chrilleson/Templates.WebApi.git"</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Language>en-US</Language>
-    <Readme>../../../README.md</Readme>
     <PackageTypes>Template</PackageTypes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
 </Project>
