@@ -6,8 +6,8 @@
       "Web",
       "WebAPI"
     ],
-    "name": ".Net 7 Api",
-    "description": "A WebApi solution.",
+    "name": ".Net Web Api",
+    "description": "A web api solution following CQRS pattern.",
     "groupIdentity": "Dotnet.Custom.WebApi",
     "identity": "Dotnet.Custom.WebApi.CSharp",
     "shortName": "web-api",
