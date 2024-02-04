@@ -8,7 +8,7 @@
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
-    <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8" />
+    <PackageReference Condition="'$(efsql)' == 'true'" Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -33,7 +33,7 @@
     <RepositoryUrl>"https://github.com/chrilleson/Templates.WebApi.git"</RepositoryUrl>
     <Language>en-US</Language>
     <Readme>../../../README.md</Readme>
-    <PackageTypes>Template</PackageTypes>    
+    <PackageTypes>Template</PackageTypes>
   </PropertyGroup>
 
 </Project>
