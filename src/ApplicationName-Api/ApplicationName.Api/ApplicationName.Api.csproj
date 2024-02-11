@@ -31,10 +31,10 @@
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
     <PackageLicenceExpression>MIT</PackageLicenceExpression>
     <PackageProjectUrl>https://github.com/chrilleson/Templates.WebApi</PackageProjectUrl>
-    <RepositoryUrl>"https://github.com/chrilleson/Templates.WebApi.git"</RepositoryUrl>
+    <RepositoryUrl>https://github.com/chrilleson/Templates.WebApi</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Language>en-US</Language>
-    <PackageTypes>Template</PackageTypes>
+    <PackageType>Template</PackageType5>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
