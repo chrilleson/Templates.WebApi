@@ -34,7 +34,7 @@
     <RepositoryUrl>https://github.com/chrilleson/Templates.WebApi</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Language>en-US</Language>
-    <PackageType>Template</PackageType5>
+    <PackageType>Template</PackageType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
