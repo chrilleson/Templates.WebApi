@@ -30,8 +30,7 @@
                     [
                         "ApplicationName-Api/Dockerfile",
                         "ApplicationName-Api/.dockerignore",
-                        "docker-compose/docker-compose.yaml",
-                        "docker-compose/docker-compose-sql.yaml"
+                        "docker-compose/**"
                     ]
                 },
                 {
@@ -42,19 +41,21 @@
                     ]
                 },
                 {
-                    "condition": "(!efsql)",
+                    "condition": "(!ef)",
                     "exclude": [
-                        "ApplicationName-Api/ApplicationName.Infrastructure/Persistence/AppDbContext.cs"                                 
+                        "ApplicationName-Api/ApplicationName.Infrastructure/Persistence/AppDbContext.cs"
                     ]
                 },
                 {
-                    "condition": "(efsql || dappersql)",
+                    "condition": "(sql-server)",
                     "exclude": [
-                        "docker-compose/docker-compose.yaml"
+                        "docker-compose/docker-compose.yaml",
+                        "docker-compose/docker-compose-postgres.yaml"
                     ]
                 },
                 {
                     "condition": "(!efsql && !dappersql)",
+                    "condition": "(!sql-server)",
                     "exclude": [
                         "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
                         "docker-compose/docker-compose-sql.yaml",
@@ -94,17 +95,23 @@
           "replaces": "HEALTHCHECK-PATH",
           "description": "HealthCheck path. Only necessary if HealthCheck is enabled."
         },
-        "efsql":{
+        "ef":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Enables use of EF Core with SQL database."
+            "description": "Enables use of EF Core."
         },
-        "dappersql":{
+        "dapper":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Enables use of Dapper with SQL database."
+            "description": "Enables use of Dapper."
+        },
+        "sql-server": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Enables use of SQL Server."
         }
     }
 }

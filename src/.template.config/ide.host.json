@@ -36,20 +36,28 @@
       "isVisible": true      
     },
     {       
-      "id": "efsql",
+      "id": "ef",
       "name": 
       {
-        "text": "Enables use of EF Core with SQL database."
+        "text": "Enables use of EF Core."
       },
       "isVisible": true      
     },
     {       
-      "id": "dappersql",
+      "id": "dapper",
       "name": 
       {
-        "text": "Enables use of Dapper with SQL database."
+        "text": "Enables use of Dapper."
       },
       "isVisible": true      
+    },
+    {
+      "id": "sql-server",
+      "name": 
+      {
+        "text": "Enables use of SQL Server."
+      },
+      "isVisible": true
     }
   ]
 }
