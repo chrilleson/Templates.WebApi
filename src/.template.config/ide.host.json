@@ -52,7 +52,7 @@
       "isVisible": true      
     },
     {
-      "id": "sql-server",
+      "id": "sqlServer",
       "name": 
       {
         "text": "Enables use of SQL Server."

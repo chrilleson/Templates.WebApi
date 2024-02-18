@@ -26,8 +26,8 @@
             "longName": "dapper",
             "shortName": "dapper"
         },
-        "sql-server": {
-            "longName": "sql-server",
+        "sqlServer": {
+            "longName": "sqlServer",
             "shortName": "sql"
         },
         "postgres": {

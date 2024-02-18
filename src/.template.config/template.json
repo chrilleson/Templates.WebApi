@@ -47,7 +47,7 @@
                     ]
                 },
                 {
-                    "condition": "(sql-server)",
+                    "condition": "(sqlServer)",
                     "exclude": [
                         "docker-compose/docker-compose.yaml",
                         "docker-compose/docker-compose-postgres.yaml"
@@ -61,7 +61,7 @@
                     ]
                 },
                 {
-                    "condition": "(!sql-server && !postgres)",
+                    "condition": "(!sqlServer && !postgres)",
                     "exclude": [
                         "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
                         "docker-compose/docker-compose-sql.yaml",
@@ -115,7 +115,7 @@
             "defaultValue": "false",
             "description": "Enables use of Dapper."
         },
-        "sql-server": {
+        "sqlServer": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
