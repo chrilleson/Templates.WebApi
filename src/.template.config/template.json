@@ -54,18 +54,26 @@
                     ]
                 },
                 {
-                    "condition": "(!efsql && !dappersql)",
-                    "condition": "(!sql-server)",
+                    "condition": "(postgres)",
+                    "exclude": [
+                        "docker-compose/docker-compose.yaml",
+                        "docker-compose/docker-compose-sql.yaml"
+                    ]
+                },
+                {
+                    "condition": "(!sql-server && !postgres)",
                     "exclude": [
                         "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
                         "docker-compose/docker-compose-sql.yaml",
+                        "docker-compose/docker-compose-postgres.yaml",
                         "data/**"
                     ]
                 }
             ],
             "rename": {
                 "docker-compose/docker-compose.yaml": "docker-compose.yaml",
-                "docker-compose/docker-compose-sql.yaml": "docker-compose.yaml"
+                "docker-compose/docker-compose-sql.yaml": "docker-compose.yaml",
+                "docker-compose/docker-compose-postgres.yaml": "docker-compose.yaml"
             }
         }
     ],
@@ -112,6 +120,12 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Enables use of SQL Server."
+        },
+        "postgres": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Enables use of PostgreSQL."
         }
     }
 }
