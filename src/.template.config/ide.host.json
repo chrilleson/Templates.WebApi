@@ -58,6 +58,14 @@
         "text": "Enables use of SQL Server."
       },
       "isVisible": true
+    },
+    {
+      "id": "postgres",
+      "name": 
+      {
+        "text": "Enables use of PostgreSQL."
+      },
+      "isVisible": true
     }
   ]
 }

@@ -29,6 +29,10 @@
         "sql-server": {
             "longName": "sql-server",
             "shortName": "sql"
+        },
+        "postgres": {
+            "longName": "postgres",
+            "shortName": "pg"
         }
     }
 }
