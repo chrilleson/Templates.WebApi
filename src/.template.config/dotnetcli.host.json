@@ -18,12 +18,17 @@
             "longName": "healthcheck-path",
             "shortName": "hp"
         },
-        "efsql": {
-            "longName": "efsql"
+        "ef": {
+            "longName": "entity-framework",
+            "shortName": "ef"
         },
-        "dappersql": {
-            "longName": "dappersql",
-            "shortName": "d-sql"
+        "dapper": {
+            "longName": "dapper",
+            "shortName": "dapper"
+        },
+        "sql-server": {
+            "longName": "sql-server",
+            "shortName": "sql"
         }
     }
 }
