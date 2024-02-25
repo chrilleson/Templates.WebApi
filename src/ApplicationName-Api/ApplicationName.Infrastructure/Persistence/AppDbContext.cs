@@ -1,4 +1,4 @@
-﻿#if (efsql)
+﻿#if (ef)
 using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationName.Infrastructure.Persistence;
