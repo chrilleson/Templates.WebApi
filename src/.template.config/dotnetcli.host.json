@@ -4,7 +4,7 @@
     {
         "Docker": {
             "longName": "docker",
-            "shortName": "d"
+            "shortName": "docker"
         },
         "ReadMe": {
             "longName": "readme",
