@@ -2,7 +2,9 @@ version: '3.9'
 name: applicationname
 services:
   api:
-    build: ./ApplicationName-Api/
+    build:
+      context: ./ApplicationName-Api/
+      dockerfile: ../ApplicationName-Api/Dockerfile
     ports:
       - "5001:443"
     environment:
@@ -28,3 +30,7 @@ services:
       timeout: 3s
       retries: 10
       start_period: 5s
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
