@@ -6,11 +6,6 @@ services:
       context: ./ApplicationName-Api/
       dockerfile: ../ApplicationName-Api/Dockerfile
     ports:
-      - "5001:443"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Docker
-      - ASPNETCORE_URLS=https://+:443
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=Qwerty1234!
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - 5001:443
     volumes:
       - ./Certificates:/https/:ro
