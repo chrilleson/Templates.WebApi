@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 // Add services to the container.
-#if (efsql || dappersql)
+#if (ef || dapper)
 builder.Services.AddPersistence(builder.Configuration.GetValue<string>("ConnectionStrings:YourDbConnection"));
 #else
 builder.Services.AddPersistence();
