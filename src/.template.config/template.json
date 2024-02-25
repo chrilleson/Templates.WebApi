@@ -49,6 +49,10 @@
                 {
                     "condition": "(sqlServer)",
                     "exclude": [
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Postgres.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.Postgres.json",
                         "docker-compose/docker-compose.yaml",
                         "docker-compose/docker-compose-postgres.yaml"
                     ]
@@ -56,6 +60,10 @@
                 {
                     "condition": "(postgres)",
                     "exclude": [
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.SqlServer.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.SqlServer.json",
                         "docker-compose/docker-compose.yaml",
                         "docker-compose/docker-compose-sql.yaml"
                     ]
@@ -63,7 +71,8 @@
                 {
                     "condition": "(!sqlServer && !postgres)",
                     "exclude": [
-                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.*.json",
+                        "ApplicationName-Api/ApplicationName.Api/appsettings.*.json",
                         "docker-compose/docker-compose-sql.yaml",
                         "docker-compose/docker-compose-postgres.yaml",
                         "data/**"
@@ -73,7 +82,11 @@
             "rename": {
                 "docker-compose/docker-compose.yaml": "docker-compose.yaml",
                 "docker-compose/docker-compose-sql.yaml": "docker-compose.yaml",
-                "docker-compose/docker-compose-postgres.yaml": "docker-compose.yaml"
+                "docker-compose/docker-compose-postgres.yaml": "docker-compose.yaml",
+                "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.SqlServer.json": "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.Postgres.json": "ApplicationName-Api/ApplicationName.Api/appsettings.Docker.json",
+                "ApplicationName-Api/ApplicationName.Api/appsettings.SqlServer.json": "ApplicationName-Api/ApplicationName.Api/appsettings.json",
+                "ApplicationName-Api/ApplicationName.Api/appsettings.Postgres.json": "ApplicationName-Api/ApplicationName.Api/appsettings.json"
             }
         }
     ],
