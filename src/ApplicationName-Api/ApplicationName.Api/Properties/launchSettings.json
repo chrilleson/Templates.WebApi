@@ -8,8 +8,8 @@
       "applicationUrl": "https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_Kestrel__Certificates__Default__Password": "Qwerty1234!",
-        "ASPNETCORE_Kestrel__Certificates__Default__Path": "../../Certificates/aspnetapp.pfx"
+        "ASPNETCORE_Kestrel__Certificates__Default__Password": "Qwerty123!",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "../../Certificates/localhost.pfx"
       }
     }
   }
