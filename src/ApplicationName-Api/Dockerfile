@@ -29,7 +29,7 @@ COPY --from=publish /app/publish .
 ENV ASPNETCORE_URLS="https://+:443"
 ENV ASPNETCORE_HTTPS_PORT=5001
 ENV ASPNETCORE_ENVIRONMENT=Docker
-ENV ASPNETCORE_Kestrel__Certificates__Default__Password="Qwerty1234!"
-ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+ENV ASPNETCORE_Kestrel__Certificates__Default__Password="Qwerty123!"
+ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/https/localhost.pfx
 
 ENTRYPOINT [ "dotnet", "ApplicationName.Api.dll" ]
