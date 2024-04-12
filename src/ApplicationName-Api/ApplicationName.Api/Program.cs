@@ -50,6 +50,6 @@ app.UseHealthChecks("HEALTHCHECK-PATH");
 #endif
 
 app.MapControllers();
-app.MapGet("/", () => "ApplicationName.Api is alive and kicking!");
+app.MapGet("/", () => "ApplicationName Api is alive and kicking!");
 
 app.Run();

@@ -3,4 +3,9 @@
 GET {{ApplicatinNameApi_HostAddress}}/
 Accept: application/json
 
+Response
+{
+    "message": "ApplicationName Api is alive and kicking!"
+}
+
 ###
