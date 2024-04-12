@@ -66,6 +66,14 @@
         "text": "Enables use of PostgreSQL."
       },
       "isVisible": true
+    },
+    {       
+      "id": "WeatherApi",
+      "name": 
+      {
+        "text": "Adds standard weather api."
+      },
+      "isVisible": true      
     }
   ]
 }

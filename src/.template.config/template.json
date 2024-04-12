@@ -77,6 +77,14 @@
                         "docker-compose/docker-compose-postgres.yaml",
                         "data/**"
                     ]
+                },
+                {
+                    "condition": "(!WeatherApi)",
+                    "exclude": [
+                        "ApplicationName-Api/ApplicationName.Api/Controllers/WeatherForecastController.cs",
+                        "ApplicationName-Api/ApplicationName.Application/Weather/**",
+                        "ApplicationName-Api/ApplicationName.Domain/WeatherForecast/**"
+                    ]
                 }
             ],
             "rename": {
@@ -139,6 +147,12 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Enables use of PostgreSQL."
+        },
+        "WeatherApi": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Adds standard weather api."
         }
     }
 }
