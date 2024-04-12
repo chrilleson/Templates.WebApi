@@ -33,6 +33,10 @@
         "postgres": {
             "longName": "postgres",
             "shortName": "pg"
+        },
+        "WeatherApi": {
+            "longName": "weather-api",
+            "shortName": "weather-api"
         }
     }
 }
