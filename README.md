@@ -20,6 +20,7 @@ When you create a new solution using the template via Visual Studio or the .NET 
 | **Dapper**            | Enables or disables the use of Dapper.                                           | `-dapper`                    | _false_                 |
 | **SqlServer**         | Enables or disables the use of a SQL server.                                     | `-sql`, `--sqlServer`        | _false_                 |
 | **PostgreSQL**        | Enables or disables the use of a PostgreSQL server.                              | `-pg`, `--postgres`          | _false_                 |
+| **Weather Api**       | Adds an endpoint and handler to get weather data.                                | `--weather-api`              | _true_                  |
 
 ### Docker
 
@@ -52,3 +53,7 @@ Adds a `db` service as a SqlServer to your docker compose file. This uses the of
 ### PostgreSQL
 
 Adds a `db` service as a PostgreSQL to your docker compose file. This uses the official Postgres v.16 image. If you want to set this to a fixed version, just change from `16` in the docker compose file. In the compose fiel you will also find the username and password for you local environment. CAUTION, do not use these in any other environment than your local. This also mount a data dir to the container so that your data will be persisted if you remove the container.
+
+### Weather Api
+
+Adds an default controller and endpoint that handles incoming requests and returns weather data. This is the default weather api implemented in this project.
