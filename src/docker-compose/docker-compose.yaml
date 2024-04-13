@@ -6,6 +6,64 @@ services:
       context: ./ApplicationName-Api/
       dockerfile: ../ApplicationName-Api/Dockerfile
     ports:
-      - 5001:443
+      - '5001:443'
     volumes:
       - ./Certificates:/https/:ro
+#if (sqlServer || postgres)
+    depends_on:
+    #if (sqlServer && postgres)
+      sql:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    #elseif (sqlServer)
+      sql: 
+        condition: service_healthy
+    #elseif (postgres)
+      postgres:
+        condition: service_healthy
+    #endif
+#endif
+#if (sqlServer)
+  sql:
+    image: 'mcr.microsoft.com/mssql/server:2022-latest'
+    user: root
+    ports:
+      - '1433:1433'
+    environment:
+      SA_PASSWORD: Qwerty123!
+      ACCEPT_EULA: 'Y'
+    volumes:
+      - ./data/sql:/var/opt/mssql/data
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P '$$SA_PASSWORD' -Q 'SELECT 1' || exit 1
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+#endif
+#if (postgres)
+  postgres:
+    image: postgres:16
+    user: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Qwerty123!
+      POSTGRES_DB: applicationname
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+#endif
+#if (sqlServer || postgres)
+  adminer:
+    image: adminer
+    ports:
+      - '8080:8080'
+#endif
