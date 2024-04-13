@@ -71,8 +71,8 @@ services:
   seq:
     image: datalust/seq:2024.2
     ports:
-      - 5341:80
+      - '5341:80'
     environment:
-      ACCEPT_EULA: "Y"
-      SEQ_API_CORSALLOWEDORIGINS: "https://localhost:5001"
+      ACCEPT_EULA: 'Y'
+      SEQ_API_CORSALLOWEDORIGINS: 'https://localhost:5001'
 #endif
