@@ -20,7 +20,8 @@ When you create a new solution using the template via Visual Studio or the .NET 
 | **Dapper**            | Enables or disables the use of Dapper.                                           | `-dapper`                    | _false_                 |
 | **SqlServer**         | Enables or disables the use of a SQL server.                                     | `-sql`, `--sqlServer`        | _false_                 |
 | **PostgreSQL**        | Enables or disables the use of a PostgreSQL server.                              | `-pg`, `--postgres`          | _false_                 |
-| **Weather Api**       | Adds an endpoint and handler to get weather data.                                | `--weather-api`              | _true_                  |
+| **Weather Api**       | Adds an endpoint and handler to get weather data.                                | `-weather-api`               | _true_                  |
+| **Seq**               | Adds Seq as a logging provider.                                                  | `-seq`                       | _true_                  |
 
 ### Docker
 
@@ -57,3 +58,7 @@ Adds a `db` service as a PostgreSQL to your docker compose file. This uses the o
 ### Weather Api
 
 Adds an default controller and endpoint that handles incoming requests and returns weather data. This is the default weather api implemented in this project.
+
+### Seq
+
+Adds Seq service as a logging provider. Works out of the box, but if you want to add custom application names etc, create a api key in the GUI. Seq has its own volume at `data/seq` where data to the service can be persited.
