@@ -54,10 +54,7 @@
                         "ApplicationName-Api/ApplicationName.Domain/WeatherForecast/**"
                     ]
                 }
-            ],
-            "rename": {
-                "docker-compose/docker-compose.yaml": "docker-compose.yaml"
-            }
+            ]
         }
     ],
     "symbols": {
