@@ -67,3 +67,12 @@ services:
     ports:
       - '8080:8080'
 #endif
+#if (seq)
+  seq:
+    image: datalust/seq:2024.2
+    ports:
+      - 5341:80
+    environment:
+      ACCEPT_EULA: "Y"
+      SEQ_API_CORSALLOWEDORIGINS: "https://localhost:5001"
+#endif

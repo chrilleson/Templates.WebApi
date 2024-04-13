@@ -1,4 +1,7 @@
 ﻿using Serilog;
+#if (seq)
+using Serilog.Sinks.Seq;
+#endif
 
 namespace ApplicationName.Api.Extensions;
 
@@ -10,5 +13,8 @@ public static class SerilogExtensions
             .Enrich.FromLogContext()
             .Enrich.WithClientIp()
             .WriteTo.Console()
+            #if(seq)
+            .WriteTo.Seq(serverUrl: hostingContext.Configuration["Seq:ServerUrl"])
+            #endif
         );
 }

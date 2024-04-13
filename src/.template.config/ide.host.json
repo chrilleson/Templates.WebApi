@@ -74,6 +74,14 @@
         "text": "Adds standard weather api."
       },
       "isVisible": true      
+    },
+    {
+      "id": "seq",
+      "name": 
+      {
+        "text": "Enables use of Seq."
+      },
+      "isVisible": true
     }
   ]
 }

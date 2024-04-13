@@ -115,6 +115,12 @@
             "datatype": "bool",
             "defaultValue": "true",
             "description": "Adds standard weather api."
+        },
+        "seq": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Adds Seq logging."
         }
     },
     "customOperations": {
@@ -124,6 +130,7 @@
                 "configuration": {
                     "if": [ "#if", "//#if", "<!--#if" ],
                     "elseif": ["#elseif", "//#elseif"],
+                    "else": ["//#else"],
                     "endif": ["#endif", "//#endif", "<!--#endif"]
                 }
             }

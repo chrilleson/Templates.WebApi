@@ -37,6 +37,10 @@
         "WeatherApi": {
             "longName": "weather-api",
             "shortName": "weather-api"
+        },
+        "seq": {
+            "longName": "seq",
+            "shortName": "seq"
         }
     }
 }
