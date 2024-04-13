@@ -122,9 +122,9 @@
             {
                 "type": "conditional",
                 "configuration": {
-                    "if": [ "#if", "//#if" ],
+                    "if": [ "#if", "//#if", "<!--#if" ],
                     "elseif": ["#elseif", "//#elseif"],
-                    "endif": ["#endif", "//#endif"]
+                    "endif": ["#endif", "//#endif", "<!--#endif"]
                 }
             }
         ]        
