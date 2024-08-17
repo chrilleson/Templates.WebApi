@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>WebApi.Template</PackageId>
+    <PackageId>Templates.WebApi</PackageId>
     <Title>WebApi .Net Templates</Title>
     <Authors>Christoffer Ljungqvist</Authors>
     <Description>This package is an template that provides a solution for web api's.</Description>
