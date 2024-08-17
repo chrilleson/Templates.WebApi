@@ -9,7 +9,7 @@ public record GetWeatherForecastRequest() : IRequest<IEnumerable<WeatherForecast
 public class GetWeatherForecast : IRequestHandler<GetWeatherForecastRequest, IEnumerable<WeatherForecast>>
 {
     private readonly ILogger<GetWeatherForecast> _logger;
-    private static readonly string[] Summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
+    private static readonly string[] Summaries = { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
 
     public GetWeatherForecast(ILogger<GetWeatherForecast> logger)
     {
