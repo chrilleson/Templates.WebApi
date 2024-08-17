@@ -1,0 +1,21 @@
+name: Build Template
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.x
+
+    - name: Restore dependencies
+      run: dotnet restore src/Templates.WebApi.csproj
+
+    - name: Build
+      run: dotnet build src/Templates.WebApi.csproj --no-restore --warnaserror --configuration Release
