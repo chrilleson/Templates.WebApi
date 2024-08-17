@@ -23,7 +23,7 @@ jobs:
       uses: actions/setup-dotnet@v4.0.0
 
     - name: dotnet pack
-      run: dotnet pack src/ApplicationName-Api/ApplicationName.Api/ApplicationName.Api.csproj -o ${{ env.NuGetDirectory }} -p:Version=${{ env.Version }}
+      run: dotnet pack src/Templates.WebApi.csproj -o ${{ env.NuGetDirectory }} -p:Version=${{ env.Version }}
 
     - uses: actions/upload-artifact@v4.3.0
       with:
