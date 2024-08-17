@@ -1,4 +1,4 @@
-name: Build
+name: Build Api
 
 on: push
 
@@ -8,12 +8,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.x
 
     - name: Restore dependencies
-      run: dotnet restore src/ApplicationName-Api
+      run: dotnet restore src/content/WebApi/ApplicationName-Api
+
     - name: Build
-      run: dotnet build src/ApplicationName-Api --no-restore --warnaserror --configuration Release
+      run: dotnet build src/content/WebApi/ApplicationName-Api --no-restore --warnaserror --configuration Release
