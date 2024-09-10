@@ -41,7 +41,7 @@ Option to add a custom health check path. The default value is `/health`.
 
 ### EF Core
 
-Adds packages and refreneces to easily setup Entity Framework Core. This is set to latest version (as of now `.Net 8.0.1`). Comes with a `AppDbContext`.
+Adds packages and refreneces to easily setup Entity Framework Core. This is set to latest version. Comes with a `AppDbContext`.
 
 ### Dapper
 
