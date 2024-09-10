@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ pack_nuget ]
     steps:
-      - uses: actions/download-artifact@v4.1.1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: Templates.WebApi.${{ env.Version }}.nupkg
           path: ${{ env.NuGetDirectory }}
